@@ -15,7 +15,6 @@
        BRAND TOKENS — City of Minneapolis
        ============================================================ */
     :root {
-      /* Core palette */
       --blue-header:    #1e6fa8;
       --blue-link:      #1a6faf;
       --blue-link-dark: #15558a;
@@ -26,6 +25,10 @@
       --light-blue:     #00b2d5;
       --light-blue-dk:  #0091ae;
       --orange:         #f68628;
+      --orange-dk:      #c45e0a;
+      --amber:          #b8962e;
+      --amber-lt:       #d4ae45;
+      --amber-pale:     #fdf6e3;
       --gray-utility:   #2d2d2d;
       --gray-divider:   #d0ccc8;
       --gray-section:   #eceff1;
@@ -34,10 +37,12 @@
       --white:          #ffffff;
 
       /* Section accent colors */
-      --accent-itsm:    #1e6fa8;   /* blue  — ITSM             */
-      --accent-mdm:     #8a9a1e;   /* green — MDM              */
-      --accent-m365:    #00b2d5;   /* teal  — Microsoft 365    */
-      --accent-ai:      #55437e;   /* purple — AI Tools        */
+      --accent-itsm:     #1e6fa8;   /* blue     — IT Service Management  */
+      --accent-mdm:      #8a9a1e;   /* green    — Mobile Device Mgmt     */
+      --accent-carrier:  #f68628;   /* orange   — Carrier Portals        */
+      --accent-m365:     #00b2d5;   /* teal     — Microsoft 365          */
+      --accent-ai:       #55437e;   /* purple   — AI Tools               */
+      --accent-ref:      #717171;   /* gray     — Reference              */
 
       --font-ui: 'Myriad Pro', 'Segoe UI', Calibri, Arial, sans-serif;
     }
@@ -59,39 +64,23 @@
     /* ============================================================
        UTILITY BAR
        ============================================================ */
-    .utility-bar {
-      background-color: var(--gray-utility);
-      padding: 7px 0;
-    }
+    .utility-bar { background-color: var(--gray-utility); padding: 7px 0; }
     .utility-bar-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
+      max-width: 1200px; margin: 0 auto; padding: 0 32px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
     }
     .utility-bar-left,
     .utility-bar-right {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      color: rgba(255,255,255,0.75);
-      font-size: 12px;
+      display: flex; align-items: center; gap: 14px;
+      color: rgba(255,255,255,0.75); font-size: 12px;
     }
     .utility-bar a { color: rgba(255,255,255,0.75); transition: color 0.15s; }
     .utility-bar a:hover { color: var(--white); }
     .utility-sep { color: rgba(255,255,255,0.22); }
     .utility-badge {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.22);
-      color: rgba(255,255,255,0.85);
-      padding: 2px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.85); padding: 2px 10px; border-radius: 20px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
     }
 
     /* ============================================================
@@ -99,103 +88,89 @@
        ============================================================ */
     .site-header {
       background-color: var(--blue-header);
-      display: flex;
-      align-items: center;
-      padding: 0 32px;
-      gap: 24px;
-      min-height: 88px;
+      display: flex; align-items: center;
+      padding: 0 32px; gap: 24px; min-height: 88px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.18);
     }
     .header-logo-wrap {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-      padding-right: 24px;
-      border-right: 1px solid rgba(255,255,255,0.25);
+      display: flex; align-items: center; flex-shrink: 0;
+      padding-right: 24px; border-right: 1px solid rgba(255,255,255,0.25);
     }
-    .header-logo-wrap img {
-      height: 80px;
-      width: auto;
-      object-fit: contain;
-    }
-    .header-title-wrap {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+    .header-logo-wrap img { height: 80px; width: auto; object-fit: contain; }
+    .header-title-wrap { flex: 1; display: flex; flex-direction: column; justify-content: center; }
     .header-title-wrap h1 {
-      color: var(--white);
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 3px;
+      color: var(--white); font-size: 24px; font-weight: 600; line-height: 1.2; margin-bottom: 3px;
     }
-    .header-title-wrap p {
-      color: rgba(255,255,255,0.78);
-      font-size: 14px;
-      font-weight: 400;
-    }
+    .header-title-wrap p { color: rgba(255,255,255,0.78); font-size: 14px; font-weight: 400; }
     .header-badge {
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.28);
-      color: var(--white);
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28);
+      color: var(--white); padding: 5px 14px; border-radius: 20px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.4px;
+      white-space: nowrap; flex-shrink: 0; display: flex; align-items: center; gap: 6px;
     }
 
     /* ============================================================
-       BREADCRUMB BAR
+       MAIN CONTENT
        ============================================================ */
-    .breadcrumb-bar {
-      background-color: var(--white);
-      border-bottom: 1px solid var(--gray-divider);
-      padding: 10px 0;
-    }
-    .breadcrumb-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 32px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-    }
-    .breadcrumb-inner a       { color: var(--blue-link); }
-    .breadcrumb-inner a:hover { text-decoration: underline; }
-    .breadcrumb-sep           { color: var(--gray-meta); font-size: 12px; }
-    .breadcrumb-current       { color: var(--gray-body); font-weight: 600; }
+    .main { max-width: 1200px; margin: 0 auto; padding: 28px 32px 48px; }
 
     /* ============================================================
-       MAIN CONTENT WRAPPER
+       IDENTITY VERIFICATION BANNER
+       Prominent amber banner at top — visually distinct from
+       portal sections because it's a security-critical tool,
+       not just a navigation link.
        ============================================================ */
-    .main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 32px 32px 48px;
-    }
-
-    /* Credentials notice chip */
-    .creds-notice {
-      display: inline-flex;
+    .id-verify-banner {
+      display: flex;
       align-items: center;
-      gap: 8px;
-      background-color: var(--white);
-      border: 1px solid var(--gray-divider);
-      border-left: 4px solid var(--blue-header);
-      border-radius: 4px;
-      padding: 10px 18px;
-      font-size: 14px;
-      color: var(--gray-body);
+      gap: 16px;
+      background-color: var(--amber-pale);
+      border: 1px solid #e6d48a;
+      border-left: 5px solid var(--amber);
+      border-radius: 6px;
+      padding: 18px 22px;
       margin-bottom: 28px;
+      text-decoration: none;
+      color: var(--gray-body);
+      transition: box-shadow 0.18s, transform 0.18s, background-color 0.18s;
+    }
+    .id-verify-banner:hover,
+    .id-verify-banner:focus {
+      box-shadow: 0 4px 16px rgba(184,150,46,0.20);
+      transform: translateY(-2px);
+      background-color: #fef9ed;
+      outline: none;
+    }
+    .id-verify-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(145deg, var(--amber-lt), var(--amber));
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(184,150,46,0.30);
+    }
+    .id-verify-icon i { font-size: 22px; color: var(--white); }
+    .id-verify-body { flex: 1; min-width: 0; }
+    .id-verify-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.0px;
+      text-transform: uppercase; color: var(--amber); margin-bottom: 2px;
+    }
+    .id-verify-name {
+      font-size: 17px; font-weight: 700; color: var(--gray-utility); line-height: 1.2;
+    }
+    .id-verify-sub {
+      font-size: 13px; color: var(--gray-meta); margin-top: 2px;
+    }
+    .id-verify-arrow {
+      color: var(--amber); font-size: 18px; flex-shrink: 0;
+      transition: transform 0.15s;
+    }
+    .id-verify-banner:hover .id-verify-arrow { transform: translateX(4px); }
+
+    /* Credentials notice */
+    .creds-notice {
+      display: inline-flex; align-items: center; gap: 8px;
+      background-color: var(--white); border: 1px solid var(--gray-divider);
+      border-left: 4px solid var(--blue-header); border-radius: 4px;
+      padding: 10px 18px; font-size: 14px; color: var(--gray-body); margin-bottom: 28px;
     }
     .creds-notice i { color: var(--blue-header); font-size: 15px; }
     .creds-notice strong { color: var(--gray-utility); }
@@ -203,49 +178,32 @@
     /* ============================================================
        SECTION
        ============================================================ */
-    .portal-section {
-      margin-bottom: 36px;
-    }
+    .portal-section { margin-bottom: 32px; }
 
     .section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
     }
-
-    /* Color bar — left accent */
-    .section-bar {
-      width: 4px;
-      height: 22px;
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-    .section-itsm .section-bar { background-color: var(--accent-itsm); }
-    .section-mdm  .section-bar { background-color: var(--accent-mdm);  }
-    .section-m365 .section-bar { background-color: var(--accent-m365); }
-    .section-ai   .section-bar { background-color: var(--accent-ai);   }
+    .section-bar { width: 4px; height: 22px; border-radius: 2px; flex-shrink: 0; }
+    .section-itsm    .section-bar { background-color: var(--accent-itsm); }
+    .section-mdm     .section-bar { background-color: var(--accent-mdm); }
+    .section-carrier .section-bar { background-color: var(--accent-carrier); }
+    .section-m365    .section-bar { background-color: var(--accent-m365); }
+    .section-ai      .section-bar { background-color: var(--accent-ai); }
+    .section-ref     .section-bar { background-color: var(--accent-ref); }
 
     .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
-      color: var(--gray-meta);
+      font-size: 11px; font-weight: 700; letter-spacing: 1.1px;
+      text-transform: uppercase; color: var(--gray-meta);
     }
-    .section-icon-fa {
-      font-size: 15px;
-    }
-    .section-itsm .section-icon-fa { color: var(--accent-itsm); }
-    .section-mdm  .section-icon-fa { color: var(--accent-mdm);  }
-    .section-m365 .section-icon-fa { color: var(--accent-m365); }
-    .section-ai   .section-icon-fa { color: var(--accent-ai);   }
+    .section-icon-fa { font-size: 15px; }
+    .section-itsm    .section-icon-fa { color: var(--accent-itsm); }
+    .section-mdm     .section-icon-fa { color: var(--accent-mdm); }
+    .section-carrier .section-icon-fa { color: var(--accent-carrier); }
+    .section-m365    .section-icon-fa { color: var(--accent-m365); }
+    .section-ai      .section-icon-fa { color: var(--accent-ai); }
+    .section-ref     .section-icon-fa { color: var(--accent-ref); }
 
-    .section-rule {
-      flex: 1;
-      height: 1px;
-      background-color: var(--gray-divider);
-    }
+    .section-rule { flex: 1; height: 1px; background-color: var(--gray-divider); }
 
     /* ============================================================
        PORTAL GRID
@@ -257,121 +215,153 @@
     }
 
     /* ============================================================
-       PORTAL CARD
+       PORTAL CARD — base
        ============================================================ */
     .portal-card {
       background-color: var(--white);
       border: 1px solid var(--gray-divider);
       border-radius: 6px;
       padding: 16px 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
+      display: flex; align-items: center; gap: 14px;
+      cursor: pointer; position: relative; overflow: hidden;
       transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s;
-
-      /* Entrance animation */
       opacity: 0;
       animation: slideUp 0.35s ease forwards;
     }
-
-    /* Left accent stripe */
     .portal-card::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 4px;
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
     }
+    .section-itsm    .portal-card::before { background-color: var(--accent-itsm); }
+    .section-mdm     .portal-card::before { background-color: var(--accent-mdm); }
+    .section-carrier .portal-card::before { background-color: var(--accent-carrier); }
+    .section-m365    .portal-card::before { background-color: var(--accent-m365); }
+    .section-ai      .portal-card::before { background-color: var(--accent-ai); }
+    .section-ref     .portal-card::before { background-color: var(--accent-ref); }
 
-    /* Accent stripe colors per section */
-    .section-itsm .portal-card::before { background-color: var(--accent-itsm); }
-    .section-mdm  .portal-card::before { background-color: var(--accent-mdm);  }
-    .section-m365 .portal-card::before { background-color: var(--accent-m365); }
-    .section-ai   .portal-card::before { background-color: var(--accent-ai);   }
-
-    .portal-card:hover,
-    .portal-card:focus {
+    .portal-card:hover, .portal-card:focus {
       box-shadow: 0 4px 16px rgba(0,0,0,0.10);
       transform: translateY(-2px);
       outline: none;
     }
-    .section-itsm .portal-card:hover { border-color: var(--accent-itsm); }
-    .section-mdm  .portal-card:hover { border-color: var(--accent-mdm);  }
-    .section-m365 .portal-card:hover { border-color: var(--accent-m365); }
-    .section-ai   .portal-card:hover { border-color: var(--accent-ai);   }
+    .section-itsm    .portal-card:hover { border-color: var(--accent-itsm); }
+    .section-mdm     .portal-card:hover { border-color: var(--accent-mdm); }
+    .section-carrier .portal-card:hover { border-color: var(--accent-carrier); }
+    .section-m365    .portal-card:hover { border-color: var(--accent-m365); }
+    .section-ai      .portal-card:hover { border-color: var(--accent-ai); }
+    .section-ref     .portal-card:hover { border-color: var(--accent-ref); }
 
     .portal-card:active { transform: scale(0.99); }
 
     /* Icon tile */
     .card-icon-tile {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      width: 44px; height: 44px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .card-icon-tile i { font-size: 20px; color: var(--white); }
 
-    /* Icon tile bg colors per section */
-    .section-itsm .card-icon-tile {
-      background: linear-gradient(145deg, #2a80bb, var(--accent-itsm));
-    }
-    .section-mdm .card-icon-tile {
-      background: linear-gradient(145deg, var(--green-icon-lt), var(--green-icon));
-    }
-    .section-m365 .card-icon-tile {
-      background: linear-gradient(145deg, #1fcde8, var(--accent-m365));
-    }
-    .section-ai .card-icon-tile {
-      background: linear-gradient(145deg, var(--purple-lt), var(--purple));
-    }
+    .section-itsm    .card-icon-tile { background: linear-gradient(145deg, #2a80bb, var(--accent-itsm)); }
+    .section-mdm     .card-icon-tile { background: linear-gradient(145deg, var(--green-icon-lt), var(--green-icon)); }
+    .section-carrier .card-icon-tile { background: linear-gradient(145deg, #ffaa55, var(--orange-dk)); }
+    .section-m365    .card-icon-tile { background: linear-gradient(145deg, #1fcde8, var(--accent-m365)); }
+    .section-ai      .card-icon-tile { background: linear-gradient(145deg, var(--purple-lt), var(--purple)); }
+    .section-ref     .card-icon-tile { background: linear-gradient(145deg, #999, #555); }
 
-    /* Card body */
     .card-body { flex: 1; min-width: 0; }
     .card-name {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--gray-utility);
-      line-height: 1.3;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      font-size: 15px; font-weight: 600; color: var(--gray-utility);
+      line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .card-sub {
-      font-size: 12px;
-      color: var(--gray-meta);
-      margin-top: 2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      font-size: 12px; color: var(--gray-meta); margin-top: 2px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
-
-    /* Arrow */
     .card-arrow {
-      color: var(--gray-divider);
-      font-size: 14px;
-      flex-shrink: 0;
+      color: var(--gray-divider); font-size: 14px; flex-shrink: 0;
       transition: transform 0.15s, color 0.15s;
     }
     .portal-card:hover .card-arrow { transform: translateX(3px); }
-    .section-itsm .portal-card:hover .card-arrow { color: var(--accent-itsm); }
-    .section-mdm  .portal-card:hover .card-arrow { color: var(--accent-mdm);  }
-    .section-m365 .portal-card:hover .card-arrow { color: var(--accent-m365); }
-    .section-ai   .portal-card:hover .card-arrow { color: var(--accent-ai);   }
+    .section-itsm    .portal-card:hover .card-arrow { color: var(--accent-itsm); }
+    .section-mdm     .portal-card:hover .card-arrow { color: var(--accent-mdm); }
+    .section-carrier .portal-card:hover .card-arrow { color: var(--accent-carrier); }
+    .section-m365    .portal-card:hover .card-arrow { color: var(--accent-m365); }
+    .section-ai      .portal-card:hover .card-arrow { color: var(--accent-ai); }
+    .section-ref     .portal-card:hover .card-arrow { color: var(--accent-ref); }
 
     /* ============================================================
-       ENTRANCE ANIMATIONS — stagger across all cards globally
+       CARD-WITH-LEARN WRAPPER
+       Used for M365 admin cards that have a Microsoft Learn sub-link.
+       The wrapper stacks the portal-card and the learn-sub-link
+       vertically without gap so they read as one unit.
+       ============================================================ */
+    .card-with-learn {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-with-learn .portal-card {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: none;
+    }
+    .learn-sub-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #f0fafd;
+      border: 1px solid var(--gray-divider);
+      border-top: 1px solid #c8edf5;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      padding: 7px 18px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--light-blue-dk);
+      text-decoration: none;
+      transition: background-color 0.15s, color 0.15s;
+    }
+    .learn-sub-link:hover,
+    .learn-sub-link:focus {
+      background-color: #d8f1f9;
+      color: var(--blue-link-dark);
+      outline: none;
+    }
+    .learn-sub-link i { font-size: 11px; }
+    .learn-sub-link .learn-arrow {
+      margin-left: auto;
+      font-size: 11px;
+      opacity: 0.6;
+      transition: transform 0.15s;
+    }
+    .learn-sub-link:hover .learn-arrow { transform: translateX(2px); opacity: 1; }
+
+    /* ============================================================
+       QUICK-CREATE SUB-SECTION DIVIDER (within ITSM)
+       Visual separator between instance links and quick-create links.
+       ============================================================ */
+    .sub-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      color: var(--gray-meta);
+      padding: 12px 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sub-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: var(--gray-divider);
+    }
+
+    /* ============================================================
+       ENTRANCE ANIMATIONS
        ============================================================ */
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
-    /* Stagger delays assigned inline via CSS counters on nth-child */
     .portal-card:nth-child(1)  { animation-delay: 0.04s; }
     .portal-card:nth-child(2)  { animation-delay: 0.08s; }
     .portal-card:nth-child(3)  { animation-delay: 0.12s; }
@@ -386,25 +376,16 @@
     .site-footer {
       background-color: var(--gray-utility);
       color: rgba(255,255,255,0.62);
-      padding: 18px 32px;
-      text-align: center;
-      font-size: 13px;
+      padding: 18px 32px; text-align: center; font-size: 13px;
       border-top: 3px solid var(--blue-header);
     }
-    .site-footer a {
-      color: rgba(255,255,255,0.55);
-      transition: color 0.15s;
-    }
+    .site-footer a { color: rgba(255,255,255,0.55); transition: color 0.15s; }
     .site-footer a:hover { color: var(--white); text-decoration: underline; }
     .footer-sep { color: rgba(255,255,255,0.22); margin: 0 8px; }
     .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 8px;
     }
 
     /* ============================================================
@@ -413,19 +394,15 @@
     @media (max-width: 1100px) {
       .portal-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 700px) {
       .site-header { padding: 0 20px; min-height: 74px; }
       .header-logo-wrap img { height: 44px; }
       .header-title-wrap h1 { font-size: 19px; }
-      .header-title-wrap p  { font-size: 13px; }
       .main { padding: 20px 16px 36px; }
       .portal-grid { grid-template-columns: 1fr; }
-      .breadcrumb-inner,
       .utility-bar-inner { padding: 0 16px; }
       .header-badge { display: none; }
     }
-
     @media print {
       .site-header, .site-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .portal-card { break-inside: avoid; }
@@ -468,22 +445,38 @@
   </header>
   <!-- STOP: Site Header -->
 
-
-  <!-- START: Breadcrumb Bar -->
-  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
-    <div class="breadcrumb-inner">
-      <a href="https://minneapolis.service-now.com/navpage.do" target="_blank" rel="noopener">IT CityLife</a>
-      <span class="breadcrumb-sep" aria-hidden="true">/</span>
-      <a href="https://www.minneapolismn.gov/government/departments/it/" target="_blank" rel="noopener">Information Technology</a>
-      <span class="breadcrumb-sep" aria-hidden="true">/</span>
-      <span class="breadcrumb-current" aria-current="page">Admin Portals</span>
-    </div>
-  </nav>
-  <!-- STOP: Breadcrumb Bar -->
+  <!-- Breadcrumb bar removed per requirements -->
 
 
   <!-- START: Main -->
   <main class="main" role="main">
+
+    <!-- ============================================================
+         IDENTITY VERIFICATION TOOL
+         Featured at top — functionally distinct from portal links.
+         Used before password resets, MFA escalations, etc.
+         ============================================================ -->
+
+    <!-- START: Identity Verification Banner -->
+    <a href="https://iaserver.ci.minneapolis.mn.us/peoplesoftcheck/"
+       class="id-verify-banner"
+       target="_blank"
+       rel="noopener"
+       aria-label="PeopleSoft User Check — Identity Verification Tool">
+      <div class="id-verify-icon" aria-hidden="true">
+        <i class="fa-solid fa-user-shield"></i>
+      </div>
+      <div class="id-verify-body">
+        <div class="id-verify-label">
+          <i class="fa-solid fa-triangle-exclamation" style="margin-right:4px;"></i>
+          Identity Verification Required
+        </div>
+        <div class="id-verify-name">PeopleSoft User Check</div>
+        <div class="id-verify-sub">Verify user identity before password resets, MFA escalations, and security actions</div>
+      </div>
+      <i class="fa-solid fa-arrow-right id-verify-arrow" aria-hidden="true"></i>
+    </a>
+    <!-- STOP: Identity Verification Banner -->
 
     <div class="creds-notice" role="note">
       <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
@@ -493,6 +486,7 @@
 
     <!-- ================================================================
          SECTION: IT Service Management
+         Instances + quick-create links split by a sub-label.
          ================================================================ -->
     <section class="portal-section section-itsm" aria-label="IT Service Management">
 
@@ -503,14 +497,14 @@
         <div class="section-rule" aria-hidden="true"></div>
       </div>
 
-      <div class="portal-grid">
+      <!-- Sub-group: Instance links -->
+      <div class="sub-section-label">Instances</div>
+      <div class="portal-grid" style="margin-bottom: 0;">
 
         <!-- START: ServiceNow PROD -->
         <a href="https://minneapolis.service-now.com/navpage.do"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="ServiceNow Production instance">
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="ServiceNow Production">
           <div class="card-icon-tile" aria-hidden="true">
             <i class="fa-solid fa-screwdriver-wrench"></i>
           </div>
@@ -524,10 +518,8 @@
 
         <!-- START: ServiceNow QA -->
         <a href="https://minneapolisqa.service-now.com/navpage.do"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="ServiceNow QA instance">
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="ServiceNow QA">
           <div class="card-icon-tile" aria-hidden="true">
             <i class="fa-solid fa-flask"></i>
           </div>
@@ -541,10 +533,8 @@
 
         <!-- START: ServiceNow DEV -->
         <a href="https://minneapolisdev.service-now.com/navpage.do"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="ServiceNow DEV instance">
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="ServiceNow DEV">
           <div class="card-icon-tile" aria-hidden="true">
             <i class="fa-solid fa-code"></i>
           </div>
@@ -555,6 +545,87 @@
           <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
         </a>
         <!-- STOP: ServiceNow DEV -->
+
+      </div>
+
+      <!-- Sub-group: Quick create links -->
+      <div class="sub-section-label">Quick Create</div>
+      <div class="portal-grid">
+
+        <!-- START: New GSE -->
+        <a href="https://minneapolis.service-now.com/citylife?id=sc_cat_item&sys_id=5476049837b3c2001dbdd5c543990e93&sysparm_category=3ae4f38fdb95b300f92f4408059619ee"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="New Get Something Else ticket">
+          <div class="card-icon-tile" aria-hidden="true">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-name">New GSE</div>
+            <div class="card-sub">Get Something Else ticket</div>
+          </div>
+          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+        </a>
+        <!-- STOP: New GSE -->
+
+        <!-- START: New INC -->
+        <a href="https://minneapolis.service-now.com/now/nav/ui/classic/params/target/incident.do%3Fsys_id%3D-1%26sysparm_query%3Dactive%3Dtrue%26sysparm_stack%3Dincident_list.do%3Fsysparm_query%3Dactive%3Dtrue"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="New Incident ticket">
+          <div class="card-icon-tile" aria-hidden="true">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-name">New INC</div>
+            <div class="card-sub">New Incident ticket</div>
+          </div>
+          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+        </a>
+        <!-- STOP: New INC -->
+
+        <!-- START: New KBA -->
+        <a href="https://minneapolis.service-now.com/now/nav/ui/classic/params/target/knowledge_create.do%3Fsysparm_stack%3Dkb_knowledge_list.do%26sysparm_collection%3Dkb_knowledge_base%26sysparm_collectionID%3Ddfc19531bf2021003f07e2c1ac0739ab"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="New Knowledge Base Article">
+          <div class="card-icon-tile" aria-hidden="true">
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-name">New KBA</div>
+            <div class="card-sub">New Knowledge Base Article</div>
+          </div>
+          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+        </a>
+        <!-- STOP: New KBA -->
+
+        <!-- START: New CR -->
+        <a href="https://minneapolis.service-now.com/now/nav/ui/classic/params/target/sn_chg_model_ui_landing.do"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="New Change Request">
+          <div class="card-icon-tile" aria-hidden="true">
+            <i class="fa-solid fa-rotate"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-name">New Change Request</div>
+            <div class="card-sub">New CR</div>
+          </div>
+          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+        </a>
+        <!-- STOP: New CR -->
+
+        <!-- START: CityLife Tech Hub -->
+        <a href="https://outlook.office365.com/book/CityLifeTechHub@minneapolismngov.onmicrosoft.com/?ismsaljsauthenabled=true"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="Book a CityLife Tech Hub appointment">
+          <div class="card-icon-tile" aria-hidden="true">
+            <i class="fa-solid fa-calendar-plus"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Book Tech Hub Appt</div>
+            <div class="card-sub">CityLife Tech Hub booking</div>
+          </div>
+          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+        </a>
+        <!-- STOP: CityLife Tech Hub -->
 
       </div>
     </section>
@@ -575,28 +646,32 @@
 
       <div class="portal-grid">
 
-        <!-- START: Intune -->
-        <a href="https://intune.microsoft.com/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="Microsoft Intune Admin Center">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-laptop"></i>
-          </div>
-          <div class="card-body">
-            <div class="card-name">Intune Admin</div>
-            <div class="card-sub">Microsoft Endpoint Manager</div>
-          </div>
-          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
-        </a>
+        <!-- START: Intune — with Learn sub-link -->
+        <div class="card-with-learn">
+          <a href="https://intune.microsoft.com/"
+             class="portal-card" target="_blank" rel="noopener"
+             aria-label="Microsoft Intune Admin Center">
+            <div class="card-icon-tile" aria-hidden="true">
+              <i class="fa-solid fa-laptop"></i>
+            </div>
+            <div class="card-body">
+              <div class="card-name">Intune Admin</div>
+              <div class="card-sub">Microsoft Endpoint Manager</div>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/mem/intune/"
+             class="learn-sub-link" target="_blank" rel="noopener">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Microsoft Learn — Intune documentation
+            <i class="fa-solid fa-arrow-right learn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
         <!-- STOP: Intune -->
 
         <!-- START: Apple Business Manager -->
         <a href="https://business.apple.com/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
+           class="portal-card" target="_blank" rel="noopener"
            aria-label="Apple Business Manager">
           <div class="card-icon-tile" aria-hidden="true">
             <i class="fa-brands fa-apple"></i>
@@ -611,9 +686,7 @@
 
         <!-- START: Google Zero Touch -->
         <a href="https://enterprise.google.com/android/zero-touch/customers"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
+           class="portal-card" target="_blank" rel="noopener"
            aria-label="Google Zero Touch Enrollment">
           <div class="card-icon-tile" aria-hidden="true">
             <i class="fa-brands fa-android"></i>
@@ -626,11 +699,43 @@
         </a>
         <!-- STOP: Google Zero Touch -->
 
+        <!-- START: Samsung Knox -->
+        <a href="https://central.samsungknox.com/"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="Samsung Knox Admin Portal">
+          <div class="card-icon-tile" aria-hidden="true">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Samsung Knox</div>
+            <div class="card-sub">Knox Admin Portal</div>
+          </div>
+          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+        </a>
+        <!-- STOP: Samsung Knox -->
+
+      </div>
+    </section>
+    <!-- STOP: Mobile Device Management -->
+
+
+    <!-- ================================================================
+         SECTION: Carrier Portals
+         ================================================================ -->
+    <section class="portal-section section-carrier" aria-label="Carrier Portals">
+
+      <div class="section-header">
+        <div class="section-bar" aria-hidden="true"></div>
+        <i class="fa-solid fa-tower-cell section-icon-fa" aria-hidden="true"></i>
+        <span class="section-label">Carrier Portals</span>
+        <div class="section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="portal-grid">
+
         <!-- START: Verizon -->
         <a href="https://mblogin.verizonwireless.com/account/business/login/unifiedlogin"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
+           class="portal-card" target="_blank" rel="noopener"
            aria-label="Verizon Business Portal">
           <div class="card-icon-tile" aria-hidden="true">
             <i class="fa-solid fa-signal"></i>
@@ -645,9 +750,7 @@
 
         <!-- START: FirstNet -->
         <a href="https://localcontrol.firstnet.att.com/admin"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
+           class="portal-card" target="_blank" rel="noopener"
            aria-label="FirstNet Local Control">
           <div class="card-icon-tile" aria-hidden="true">
             <i class="fa-solid fa-tower-broadcast"></i>
@@ -662,9 +765,7 @@
 
         <!-- START: AT&T -->
         <a href="https://www.wireless.att.com/premiercare/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
+           class="portal-card" target="_blank" rel="noopener"
            aria-label="AT&T Premier Care Portal">
           <div class="card-icon-tile" aria-hidden="true">
             <i class="fa-solid fa-wifi"></i>
@@ -679,9 +780,7 @@
 
         <!-- START: T-Mobile -->
         <a href="https://statelocalgov.tmorders.com/portal/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
+           class="portal-card" target="_blank" rel="noopener"
            aria-label="T-Mobile State and Local Government Portal">
           <div class="card-icon-tile" aria-hidden="true">
             <i class="fa-solid fa-mobile"></i>
@@ -696,11 +795,12 @@
 
       </div>
     </section>
-    <!-- STOP: Mobile Device Management -->
+    <!-- STOP: Carrier Portals -->
 
 
     <!-- ================================================================
          SECTION: Microsoft 365 Administration
+         Cards with Microsoft Learn sub-links where provided.
          ================================================================ -->
     <section class="portal-section section-m365" aria-label="Microsoft 365 Administration">
 
@@ -714,123 +814,206 @@
       <div class="portal-grid">
 
         <!-- START: M365 Admin -->
-        <a href="https://admin.microsoft.com/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="Microsoft 365 Admin Center">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-building"></i>
-          </div>
-          <div class="card-body">
-            <div class="card-name">M365 Admin</div>
-            <div class="card-sub">Microsoft 365 Admin Center</div>
-          </div>
-          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
-        </a>
+        <div class="card-with-learn">
+          <a href="https://admin.microsoft.com/"
+             class="portal-card" target="_blank" rel="noopener"
+             aria-label="Microsoft 365 Admin Center">
+            <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-building"></i></div>
+            <div class="card-body">
+              <div class="card-name">M365 Admin</div>
+              <div class="card-sub">Microsoft 365 Admin Center</div>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview"
+             class="learn-sub-link" target="_blank" rel="noopener">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Microsoft Learn — M365 Admin Center overview
+            <i class="fa-solid fa-arrow-right learn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
         <!-- STOP: M365 Admin -->
 
         <!-- START: Teams Admin -->
-        <a href="https://admin.teams.microsoft.com/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="Microsoft Teams Admin Center">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-users"></i>
-          </div>
-          <div class="card-body">
-            <div class="card-name">Teams Admin</div>
-            <div class="card-sub">Teams Admin Center</div>
-          </div>
-          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
-        </a>
+        <div class="card-with-learn">
+          <a href="https://admin.teams.microsoft.com/"
+             class="portal-card" target="_blank" rel="noopener"
+             aria-label="Microsoft Teams Admin Center">
+            <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-users"></i></div>
+            <div class="card-body">
+              <div class="card-name">Teams Admin</div>
+              <div class="card-sub">Teams Admin Center</div>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/microsoftteams/itadmin-readiness"
+             class="learn-sub-link" target="_blank" rel="noopener">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Microsoft Learn — Teams admin documentation
+            <i class="fa-solid fa-arrow-right learn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
         <!-- STOP: Teams Admin -->
 
         <!-- START: Azure -->
-        <a href="https://portal.azure.com/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="Microsoft Azure Portal">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-cloud-bolt"></i>
-          </div>
-          <div class="card-body">
-            <div class="card-name">Azure Admin</div>
-            <div class="card-sub">Azure Portal</div>
-          </div>
-          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
-        </a>
+        <div class="card-with-learn">
+          <a href="https://portal.azure.com/"
+             class="portal-card" target="_blank" rel="noopener"
+             aria-label="Microsoft Azure Portal">
+            <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-cloud-bolt"></i></div>
+            <div class="card-body">
+              <div class="card-name">Azure Admin</div>
+              <div class="card-sub">Azure Portal</div>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/azure/azure-portal/"
+             class="learn-sub-link" target="_blank" rel="noopener">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Microsoft Learn — Azure portal documentation
+            <i class="fa-solid fa-arrow-right learn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
         <!-- STOP: Azure -->
 
         <!-- START: Entra -->
-        <a href="https://entra.microsoft.com/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="Microsoft Entra Admin Center">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-lock"></i>
-          </div>
-          <div class="card-body">
-            <div class="card-name">Entra Admin</div>
-            <div class="card-sub">Microsoft Entra Admin Center</div>
-          </div>
-          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
-        </a>
+        <div class="card-with-learn">
+          <a href="https://entra.microsoft.com/"
+             class="portal-card" target="_blank" rel="noopener"
+             aria-label="Microsoft Entra Admin Center">
+            <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-lock"></i></div>
+            <div class="card-body">
+              <div class="card-name">Entra Admin</div>
+              <div class="card-sub">Microsoft Entra Admin Center</div>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/entra/"
+             class="learn-sub-link" target="_blank" rel="noopener">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Microsoft Learn — Entra documentation
+            <i class="fa-solid fa-arrow-right learn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
         <!-- STOP: Entra -->
 
         <!-- START: Purview -->
-        <a href="https://purview.microsoft.com/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="Microsoft Purview">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-          <div class="card-body">
-            <div class="card-name">Purview Admin</div>
-            <div class="card-sub">Microsoft Purview</div>
-          </div>
-          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
-        </a>
+        <div class="card-with-learn">
+          <a href="https://purview.microsoft.com/"
+             class="portal-card" target="_blank" rel="noopener"
+             aria-label="Microsoft Purview">
+            <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="card-body">
+              <div class="card-name">Purview Admin</div>
+              <div class="card-sub">Microsoft Purview</div>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/purview/"
+             class="learn-sub-link" target="_blank" rel="noopener">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Microsoft Learn — Purview documentation
+            <i class="fa-solid fa-arrow-right learn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
         <!-- STOP: Purview -->
 
         <!-- START: Exchange -->
-        <a href="https://admin.exchange.microsoft.com/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="Microsoft Exchange Admin Center">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-envelope"></i>
-          </div>
-          <div class="card-body">
-            <div class="card-name">Exchange Admin</div>
-            <div class="card-sub">Exchange Admin Center</div>
-          </div>
-          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
-        </a>
+        <div class="card-with-learn">
+          <a href="https://admin.exchange.microsoft.com/"
+             class="portal-card" target="_blank" rel="noopener"
+             aria-label="Exchange Admin Center">
+            <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
+            <div class="card-body">
+              <div class="card-name">Exchange Admin</div>
+              <div class="card-sub">Exchange Admin Center</div>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/exchange/"
+             class="learn-sub-link" target="_blank" rel="noopener">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Microsoft Learn — Exchange documentation
+            <i class="fa-solid fa-arrow-right learn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
         <!-- STOP: Exchange -->
 
         <!-- START: SharePoint -->
-        <a href="https://admin.microsoft.com/sharepoint"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
-           aria-label="SharePoint Admin Center">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-folder-open"></i>
-          </div>
+        <div class="card-with-learn">
+          <a href="https://admin.microsoft.com/sharepoint"
+             class="portal-card" target="_blank" rel="noopener"
+             aria-label="SharePoint Admin Center">
+            <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-folder-open"></i></div>
+            <div class="card-body">
+              <div class="card-name">SharePoint Admin</div>
+              <div class="card-sub">SharePoint Admin Center</div>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/sharepoint/"
+             class="learn-sub-link" target="_blank" rel="noopener">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Microsoft Learn — SharePoint documentation
+            <i class="fa-solid fa-arrow-right learn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
+        <!-- STOP: SharePoint -->
+
+        <!-- START: Defender XDR — added; Learn link provided -->
+        <div class="card-with-learn">
+          <a href="https://security.microsoft.com/"
+             class="portal-card" target="_blank" rel="noopener"
+             aria-label="Microsoft Defender XDR Portal">
+            <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-bug-slash"></i></div>
+            <div class="card-body">
+              <div class="card-name">Defender XDR</div>
+              <div class="card-sub">Microsoft Defender Portal</div>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/defender-xdr/"
+             class="learn-sub-link" target="_blank" rel="noopener">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Microsoft Learn — Defender XDR documentation
+            <i class="fa-solid fa-arrow-right learn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
+        <!-- STOP: Defender XDR -->
+
+        <!-- START: Power Platform Admin — added; Learn link provided -->
+        <div class="card-with-learn">
+          <a href="https://admin.powerplatform.microsoft.com/"
+             class="portal-card" target="_blank" rel="noopener"
+             aria-label="Power Platform Admin Center">
+            <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
+            <div class="card-body">
+              <div class="card-name">Power Platform Admin</div>
+              <div class="card-sub">Power Platform Admin Center</div>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+          </a>
+          <a href="https://learn.microsoft.com/en-us/power-platform/"
+             class="learn-sub-link" target="_blank" rel="noopener">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Microsoft Learn — Power Platform documentation
+            <i class="fa-solid fa-arrow-right learn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
+        <!-- STOP: Power Platform Admin -->
+
+        <!-- START: M365 Service Health — added for operational visibility -->
+        <a href="https://admin.microsoft.com/adminportal/home#/servicehealth"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="Microsoft 365 Service Health Dashboard">
+          <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></div>
           <div class="card-body">
-            <div class="card-name">SharePoint Admin</div>
-            <div class="card-sub">SharePoint Admin Center</div>
+            <div class="card-name">M365 Service Health</div>
+            <div class="card-sub">Incidents &amp; advisories dashboard</div>
           </div>
           <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
         </a>
-        <!-- STOP: SharePoint -->
+        <!-- STOP: M365 Service Health -->
 
       </div>
     </section>
@@ -853,13 +1036,9 @@
 
         <!-- START: Copilot -->
         <a href="https://copilot.microsoft.com/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
+           class="portal-card" target="_blank" rel="noopener"
            aria-label="Microsoft Copilot">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-          </div>
+          <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
           <div class="card-body">
             <div class="card-name">Microsoft Copilot</div>
             <div class="card-sub">M365 Copilot · Bing Chat</div>
@@ -870,13 +1049,9 @@
 
         <!-- START: ChatGPT -->
         <a href="https://chat.openai.com/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
+           class="portal-card" target="_blank" rel="noopener"
            aria-label="ChatGPT by OpenAI">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-comment-dots"></i>
-          </div>
+          <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-comment-dots"></i></div>
           <div class="card-body">
             <div class="card-name">ChatGPT</div>
             <div class="card-sub">OpenAI ChatGPT</div>
@@ -887,13 +1062,9 @@
 
         <!-- START: Claude -->
         <a href="https://claude.ai/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
+           class="portal-card" target="_blank" rel="noopener"
            aria-label="Claude by Anthropic">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-brain"></i>
-          </div>
+          <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-brain"></i></div>
           <div class="card-body">
             <div class="card-name">Claude</div>
             <div class="card-sub">Anthropic Claude</div>
@@ -904,13 +1075,9 @@
 
         <!-- START: Perplexity -->
         <a href="https://www.perplexity.ai/"
-           class="portal-card"
-           target="_blank"
-           rel="noopener"
+           class="portal-card" target="_blank" rel="noopener"
            aria-label="Perplexity AI">
-          <div class="card-icon-tile" aria-hidden="true">
-            <i class="fa-solid fa-magnifying-glass-chart"></i>
-          </div>
+          <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
           <div class="card-body">
             <div class="card-name">Perplexity</div>
             <div class="card-sub">Perplexity AI Search</div>
@@ -922,6 +1089,77 @@
       </div>
     </section>
     <!-- STOP: AI Tools -->
+
+
+    <!-- ================================================================
+         SECTION: Reference & Resources
+         ================================================================ -->
+    <section class="portal-section section-ref" aria-label="Reference and Resources">
+
+      <div class="section-header">
+        <div class="section-bar" aria-hidden="true"></div>
+        <i class="fa-solid fa-bookmark section-icon-fa" aria-hidden="true"></i>
+        <span class="section-label">Reference &amp; Resources</span>
+        <div class="section-rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="portal-grid">
+
+        <!-- START: Teams IT Admin Readiness -->
+        <a href="https://learn.microsoft.com/en-us/microsoftteams/itadmin-readiness"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="Microsoft Teams IT Admin Readiness">
+          <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="card-body">
+            <div class="card-name">Teams IT Admin Readiness</div>
+            <div class="card-sub">Microsoft Learn · Teams admin guide</div>
+          </div>
+          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+        </a>
+        <!-- STOP: Teams IT Admin Readiness -->
+
+        <!-- START: GitHub — MplsCity -->
+        <a href="https://github.com/MplsCity"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="MplsCity GitHub — Jose Diaz">
+          <div class="card-icon-tile" aria-hidden="true"><i class="fa-brands fa-github"></i></div>
+          <div class="card-body">
+            <div class="card-name">GitHub — MplsCity</div>
+            <div class="card-sub">Jose Diaz · City kiosk &amp; web projects</div>
+          </div>
+          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+        </a>
+        <!-- STOP: GitHub -->
+
+        <!-- START: Microsoft 365 Docs -->
+        <a href="https://learn.microsoft.com/en-us/microsoft-365/"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="Microsoft 365 Documentation on Microsoft Learn">
+          <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-book"></i></div>
+          <div class="card-body">
+            <div class="card-name">Microsoft 365 Docs</div>
+            <div class="card-sub">Full M365 documentation on Learn</div>
+          </div>
+          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+        </a>
+        <!-- STOP: Microsoft 365 Docs -->
+
+        <!-- START: Microsoft Learn -->
+        <a href="https://learn.microsoft.com/"
+           class="portal-card" target="_blank" rel="noopener"
+           aria-label="Microsoft Learn">
+          <div class="card-icon-tile" aria-hidden="true"><i class="fa-solid fa-circle-question"></i></div>
+          <div class="card-body">
+            <div class="card-name">Microsoft Learn</div>
+            <div class="card-sub">Training, docs &amp; certifications</div>
+          </div>
+          <i class="fa-solid fa-chevron-right card-arrow" aria-hidden="true"></i>
+        </a>
+        <!-- STOP: Microsoft Learn -->
+
+      </div>
+    </section>
+    <!-- STOP: Reference & Resources -->
 
   </main>
   <!-- STOP: Main -->
